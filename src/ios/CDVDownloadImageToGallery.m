@@ -3,6 +3,7 @@
 #import <Cordova/CDVPlugin.h>
 #import <Cordova/CDVPluginResult.h>
 #import <Photos/Photos.h>
+#import "CDVDownloadImageToGallery.h"
 
 @implementation CDVDownloadImageToGallery
 
@@ -63,7 +64,7 @@
 
   }
 
-  - (void) saveImageToPhotos: (CDVPluginResult) pluginRes command: (CDVInvokedUrlCommand * ) command data: (NSData) data {
+  - (void) saveImageToPhotos: (CDVPluginResult*) pluginRes command: (CDVInvokedUrlCommand * ) command data: (NSData*) data {
 
     UIImage * image = [UIImage imageWithData: data];
     UIImageWriteToSavedPhotosAlbum(image, self, @selector(image: didFinishSavingWithError: contextInfo: ), nil);
